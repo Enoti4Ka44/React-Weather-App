@@ -1,5 +1,11 @@
+import { ThemeContextProvider } from "./context/ThemeContext";
+
 function App() {
-  return <></>;
+  return (
+    <>
+      <ThemeContextProvider></ThemeContextProvider>
+    </>
+  );
 }
 
 export default App;
