@@ -1,9 +1,12 @@
+import { Typography } from "@mui/material";
 import { ThemeContextProvider } from "./context/ThemeContext";
 
 function App() {
   return (
     <>
-      <ThemeContextProvider></ThemeContextProvider>
+      <ThemeContextProvider>
+        <Typography>Test</Typography>
+      </ThemeContextProvider>
     </>
   );
 }
