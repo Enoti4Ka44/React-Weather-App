@@ -29,7 +29,7 @@ const lightTheme = createTheme({
       main: "#3cbdd4",
     },
     secondary: {
-      main: "#58c3b8",
+      main: "#57dacdff",
     },
     background: {
       default: "#0B849F",
