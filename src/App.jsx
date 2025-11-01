@@ -10,6 +10,7 @@ import Footer from "./shared/components/Footer";
 import Search from "./shared/ui/Search";
 import { useState } from "react";
 import { set } from "react-hook-form";
+import Header from "./shared/components/Header";
 
 function App() {
   const [s, setS] = useState("");
@@ -24,13 +25,10 @@ function App() {
             alignItems: "center",
             minHeight: "100vh",
           }}
+          component="main"
+          maxWidth="false"
         >
-          <Search
-            onChange={(e) => {
-              setS(e.target.value);
-            }}
-            query={s}
-          />
+          <Header />
           <Footer />
         </Container>
       </ThemeContextProvider>

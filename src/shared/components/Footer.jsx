@@ -3,10 +3,14 @@ import React from "react";
 
 function Footer(props) {
   return (
-    <Box sx={{ marginTop: "auto", px: 2, py: 3 }}>
+    <Box sx={{ marginTop: "auto", py: 3, textAlign: "center" }}>
       <Typography>
         Developed by{" "}
-        <Link color="secondary" href="https://github.com/Enoti4Ka44">
+        <Link
+          color="secondary"
+          underline="always"
+          href="https://github.com/Enoti4Ka44"
+        >
           Enoti4ka
         </Link>
       </Typography>
