@@ -1,6 +1,6 @@
 import { ThemeProvider } from "@emotion/react";
 import { CssBaseline, createTheme } from "@mui/material";
-import { createContext, useContext, useMemo, useState } from "react";
+import { createContext, useContext, useEffect, useMemo, useState } from "react";
 
 const darkTheme = createTheme({
   palette: {
@@ -44,7 +44,13 @@ const lightTheme = createTheme({
 export const ThemeContext = createContext();
 
 export function ThemeContextProvider({ children }) {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("theme") || "dark";
+  });
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
   const memoTheme = useMemo(
     () => (theme === "dark" ? darkTheme : lightTheme),
@@ -53,7 +59,6 @@ export function ThemeContextProvider({ children }) {
 
   const changeTheme = () => {
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
-    console.log("click");
   };
 
   return (

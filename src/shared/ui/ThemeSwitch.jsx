@@ -60,10 +60,17 @@ const StyledThemeSwitch = styled(Switch)(({ theme }) => ({
 }));
 
 function ThemeSwitch() {
-  const { changeTheme } = useContext(ThemeContext);
+  const { changeTheme, theme } = useContext(ThemeContext);
 
   return (
-    <FormControlLabel control={<StyledThemeSwitch onChange={changeTheme} />} />
+    <FormControlLabel
+      control={
+        <StyledThemeSwitch
+          onChange={changeTheme}
+          checked={theme === "dark" ? true : false}
+        />
+      }
+    />
   );
 }
 
