@@ -4,12 +4,25 @@ import Footer from "../shared/components/Footer";
 import Header from "../shared/components/Header";
 
 function HomePage() {
+  const [isLoading, setLoading] = useState(false);
   const [query, setQuery] = useState("");
   const [isSearching, setIsSearching] = useState(false);
 
   const handleSubmitSearch = (e) => {
-    setIsSearching(true);
     e.preventDefault();
+
+    try {
+      setIsSearching(true);
+      const promise = new Promise(() => {
+        setTimeout(() => {
+          console.log("submitted");
+        }, 1000);
+      });
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (

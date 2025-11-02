@@ -2,6 +2,7 @@ import { Box, Switch, IconButton, Grid } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import React from "react";
 import Search from "../ui/Search";
+import ThemeSwitch from "../ui/ThemeSwitch";
 
 function Header({ query, onChange, onSubmit }) {
   return (
@@ -28,7 +29,7 @@ function Header({ query, onChange, onSubmit }) {
         alignItems="center"
         gap={1}
       >
-        <Switch />
+        <ThemeSwitch />
         <IconButton
           LinkComponent="a"
           href="https://github.com/Enoti4Ka44/React-Weather-App"
