@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import Footer from "../shared/components/Footer";
 import Header from "../shared/components/Header";
 
@@ -24,12 +24,19 @@ function HomePage() {
       component="main"
       maxWidth="false"
     >
-      <Header
-        query={query}
-        visible={isSearching}
-        onSubmit={handleSubmitSearch}
-        onChange={(e) => setQuery(e.target.value)}
-      />
+      <Box
+        width="100%"
+        sx={{
+          transition: "0.5s all ease",
+          transform: isSearching ? "translateY(0)" : "translateY(40vh)",
+        }}
+      >
+        <Header
+          query={query}
+          onSubmit={handleSubmitSearch}
+          onChange={(e) => setQuery(e.target.value)}
+        />
+      </Box>
       <Footer />
     </Container>
   );

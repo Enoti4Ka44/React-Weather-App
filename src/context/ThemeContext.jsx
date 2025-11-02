@@ -26,7 +26,7 @@ const lightTheme = createTheme({
   palette: {
     mode: "light",
     primary: {
-      main: "#3cbdd4",
+      main: "#60c4d6ff",
     },
     secondary: {
       main: "#57dacdff",
@@ -44,7 +44,7 @@ const lightTheme = createTheme({
 export const ThemeContext = createContext();
 
 export function ThemeContextProvider({ children }) {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
 
   const memoTheme = useMemo(
     () => (theme === "dark" ? darkTheme : lightTheme),
