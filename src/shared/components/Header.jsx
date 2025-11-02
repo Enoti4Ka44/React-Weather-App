@@ -3,7 +3,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import React from "react";
 import Search from "../ui/Search";
 
-function Header({ query, onChange }) {
+function Header({ query, onChange, visible, onSubmit }) {
   return (
     <Grid
       container
@@ -15,8 +15,18 @@ function Header({ query, onChange }) {
     >
       <Grid size={{ xs: 0, sm: 3 }}></Grid>
 
-      <Grid size={{ xs: 12, sm: 6 }} display="flex" justifyContent="center">
-        <Search onChange={onChange} query={query} />
+      <Grid
+        size={{ xs: 12, sm: 6 }}
+        display="flex"
+        justifyContent="center"
+        sx={{
+          transition: "0.5s all ease",
+          transform: visible ? "translateY(0)" : "translateY(300px)",
+        }}
+      >
+        <Box component="form" width="100%" onSubmit={onSubmit}>
+          <Search onChange={onChange} query={query} />
+        </Box>
       </Grid>
 
       <Grid

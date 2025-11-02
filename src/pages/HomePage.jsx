@@ -8,8 +8,8 @@ function HomePage() {
   const [isSearching, setIsSearching] = useState(false);
 
   const handleSubmitSearch = (e) => {
-    e.preventDefault();
     setIsSearching(true);
+    e.preventDefault();
   };
 
   return (
@@ -27,7 +27,8 @@ function HomePage() {
       <Header
         query={query}
         visible={isSearching}
-        onChange={handleSubmitSearch}
+        onSubmit={handleSubmitSearch}
+        onChange={(e) => setQuery(e.target.value)}
       />
       <Footer />
     </Container>
