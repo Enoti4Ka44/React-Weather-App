@@ -1,27 +1,27 @@
 import React, { useState } from "react";
-import { Box, Container } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import Footer from "../shared/components/Footer";
 import Header from "../shared/components/Header";
+import { getCurrentWeather } from "../services/weatherAPI";
 
 function HomePage() {
-  const [isLoading, setLoading] = useState(false);
-  const [query, setQuery] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [queryCity, setQueryCity] = useState("");
   const [isSearching, setIsSearching] = useState(false);
+  const [weatherData, setWeatherData] = useState([]);
 
-  const handleSubmitSearch = (e) => {
+  const handleSubmitSearch = async (e) => {
     e.preventDefault();
-
+    setIsSearching(true);
     try {
-      setIsSearching(true);
-      const promise = new Promise(() => {
-        setTimeout(() => {
-          console.log("submitted");
-        }, 1000);
-      });
+      setIsLoading(true);
+      const response = await getCurrentWeather(queryCity);
+      setWeatherData(response.data);
     } catch (error) {
+      setIsSearching(false);
       console.log(error);
     } finally {
-      setLoading(false);
+      setIsLoading(false);
     }
   };
 
@@ -45,11 +45,12 @@ function HomePage() {
         }}
       >
         <Header
-          query={query}
+          query={queryCity}
           onSubmit={handleSubmitSearch}
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={(e) => setQueryCity(e.target.value)}
         />
       </Box>
+
       <Footer />
     </Container>
   );
