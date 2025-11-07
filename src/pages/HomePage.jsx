@@ -3,22 +3,26 @@ import { Box, Container, Typography } from "@mui/material";
 import Footer from "../shared/components/Footer";
 import Header from "../shared/components/Header";
 import { getCurrentWeather } from "../services/weatherAPI";
+import WeatherContent from "../shared/components/WeatherContent";
 
 function HomePage() {
   const [isLoading, setIsLoading] = useState(false);
   const [queryCity, setQueryCity] = useState("");
   const [isSearching, setIsSearching] = useState(false);
-  const [weatherData, setWeatherData] = useState([]);
+  const [weatherData, setWeatherData] = useState(null);
 
   const handleSubmitSearch = async (e) => {
     e.preventDefault();
     setIsSearching(true);
+    setTimeout(fetchWeather, 1000);
+  };
+
+  const fetchWeather = async () => {
     try {
       setIsLoading(true);
       const response = await getCurrentWeather(queryCity);
       setWeatherData(response.data);
     } catch (error) {
-      setIsSearching(false);
       console.log(error);
     } finally {
       setIsLoading(false);
@@ -51,6 +55,9 @@ function HomePage() {
         />
       </Box>
 
+      {isSearching && weatherData && (
+        <WeatherContent data={weatherData?.location} />
+      )}
       <Footer />
     </Container>
   );
