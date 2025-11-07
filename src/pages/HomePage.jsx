@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Box, Container, Typography } from "@mui/material";
 import Footer from "../shared/components/Footer";
 import Header from "../shared/components/Header";
-import { getCurrentWeather } from "../services/weatherAPI";
+import { getWeather } from "../services/weatherAPI";
 import WeatherContent from "../shared/components/WeatherContent";
 
 function HomePage() {
@@ -20,7 +20,7 @@ function HomePage() {
   const fetchWeather = async () => {
     try {
       setIsLoading(true);
-      const response = await getCurrentWeather(queryCity);
+      const response = await getWeather(queryCity);
       setWeatherData(response.data);
     } catch (error) {
       console.log(error);

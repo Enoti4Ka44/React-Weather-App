@@ -1,8 +1,7 @@
 import { Box, Paper, Typography } from "@mui/material";
 
-function CurrentWeather({ data }) {
-  const { name } = data.location;
-  const { temp_c, condition, feelslike_c } = data.current;
+function CurrentWeather({ city, weather }) {
+  const { temp_c, condition, feelslike_c } = weather;
   return (
     <Box
       sx={{
@@ -13,7 +12,7 @@ function CurrentWeather({ data }) {
     >
       <Box>
         <Typography variant="h5" component="h2" fontWeight={700}>
-          {name}
+          {city}
         </Typography>
 
         <Typography sx={{ mt: 4 }} variant="h4" component="h2" fontWeight={700}>
