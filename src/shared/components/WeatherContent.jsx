@@ -1,14 +1,14 @@
 import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
+import CurrentWeather from "./CurrentWeather";
 
 function WeatherContent({ data }) {
   return (
-    <Grid container>
+    <Grid container sx={{ width: "100%" }}>
       <Grid size={8}>
-        <Typography variant="h5" component="h1" fontWeight={600}>
-          {data.name}
-        </Typography>
+        <CurrentWeather data={data} />
       </Grid>
+
       <Grid size={4}></Grid>
     </Grid>
   );

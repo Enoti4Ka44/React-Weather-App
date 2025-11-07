@@ -13,7 +13,7 @@ const darkTheme = createTheme({
     },
     backgroundColor: "#000324",
     background: {
-      default: "#000324",
+      default: "#00053bff",
       paper: "#3F4471",
     },
   },
@@ -32,7 +32,7 @@ const lightTheme = createTheme({
       main: "#57dacdff",
     },
     background: {
-      default: "#0B849F",
+      default: "#149ab8ff",
       paper: "#A6E1FF",
     },
   },

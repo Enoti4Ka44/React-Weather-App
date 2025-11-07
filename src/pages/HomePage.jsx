@@ -55,9 +55,7 @@ function HomePage() {
         />
       </Box>
 
-      {isSearching && weatherData && (
-        <WeatherContent data={weatherData?.location} />
-      )}
+      {isSearching && weatherData && <WeatherContent data={weatherData} />}
       <Footer />
     </Container>
   );
