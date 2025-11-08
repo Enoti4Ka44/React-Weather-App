@@ -14,7 +14,7 @@ const darkTheme = createTheme({
     backgroundColor: "#000324",
     background: {
       default: "#00053bff",
-      paper: "#3F4471",
+      paper: "#3f4471c7",
     },
   },
   typography: {
@@ -33,7 +33,7 @@ const lightTheme = createTheme({
     },
     background: {
       default: "#149ab8ff",
-      paper: "#A6E1FF",
+      paper: "#a6e1ffc7",
     },
   },
   typography: {
