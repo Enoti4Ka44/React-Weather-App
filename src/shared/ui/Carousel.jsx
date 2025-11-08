@@ -62,7 +62,10 @@ function Carousel({ data }) {
       }}
     >
       <IconButton
-        sx={{ "&:hover": { backgroundColor: "transparent" } }}
+        sx={{
+          "&:hover": { backgroundColor: "transparent" },
+          display: { xs: "none", md: "block" },
+        }}
         onClick={handlePrev}
         disabled={isDisabled("prev")}
       >
@@ -75,8 +78,9 @@ function Carousel({ data }) {
           display: "flex",
           gap: 3,
           transition: "all .5s ease-out",
-          overflow: "hidden",
+          overflow: { xs: "auto", md: "hidden" },
           scrollBehavior: "smooth",
+          "::-webkit-scrollbar": { display: "none" },
         }}
       >
         {data.map((card, index) => (
@@ -90,7 +94,10 @@ function Carousel({ data }) {
       </Box>
 
       <IconButton
-        sx={{ "&:hover": { backgroundColor: "transparent" } }}
+        sx={{
+          "&:hover": { backgroundColor: "transparent" },
+          display: { xs: "none", md: "block" },
+        }}
         onClick={handleNext}
         disabled={isDisabled("next")}
       >
