@@ -1,8 +1,8 @@
 import { ThemeProvider } from "@emotion/react";
-import { CssBaseline, createTheme } from "@mui/material";
+import { CssBaseline, createTheme, responsiveFontSizes } from "@mui/material";
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 
-const darkTheme = createTheme({
+let darkTheme = createTheme({
   palette: {
     mode: "dark",
     primary: {
@@ -22,7 +22,7 @@ const darkTheme = createTheme({
   },
 });
 
-const lightTheme = createTheme({
+let lightTheme = createTheme({
   palette: {
     mode: "light",
     primary: {
@@ -40,6 +40,9 @@ const lightTheme = createTheme({
     fontFamily: "Montserrat",
   },
 });
+
+lightTheme = responsiveFontSizes(lightTheme);
+darkTheme = responsiveFontSizes(darkTheme);
 
 export const ThemeContext = createContext();
 

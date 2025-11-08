@@ -4,10 +4,10 @@ import Carousel from "../ui/Carousel";
 
 function ForecastWeather({ hourForecastData }) {
   return (
-    <Paper sx={{ borderRadius: 3, p: 1.5 }} elevation={4}>
+    <Paper sx={{ borderRadius: 3, p: 2 }} elevation={4}>
       <Typography
         variant="subtitle2"
-        component="h6"
+        component="h5"
         fontWeight={700}
         sx={{ opacity: "0.7" }}
       >

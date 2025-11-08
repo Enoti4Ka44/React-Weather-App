@@ -12,7 +12,7 @@ function CurrentWeather({ city, currentWeather }) {
       }}
     >
       <Box>
-        <Typography variant="h5" component="h2" fontWeight={700}>
+        <Typography variant="h4" component="h2" fontWeight={700}>
           {city}
         </Typography>
 
@@ -37,10 +37,14 @@ function CurrentWeather({ city, currentWeather }) {
         </Typography>
       </Box>
       <Box sx={{ textAlign: "center" }}>
-        <Typography variant="subtitle1" component="h6">
+        <Typography variant="h6" component="h6">
           {condition.text}
         </Typography>
-        <img src={condition.icon} alt="condition icon" />
+        <img
+          src={condition.icon}
+          alt="condition icon"
+          style={{ marginTop: 32 }}
+        />
       </Box>
     </Box>
   );
