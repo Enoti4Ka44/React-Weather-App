@@ -2,7 +2,7 @@ import { Paper, Typography } from "@mui/material";
 import React from "react";
 import Carousel from "../ui/Carousel";
 
-function ForecastWeather({ hourForecastData }) {
+function HourWeatherForecast({ hourForecastData }) {
   return (
     <Paper sx={{ borderRadius: 3, p: 2 }} elevation={4}>
       <Typography
@@ -18,4 +18,4 @@ function ForecastWeather({ hourForecastData }) {
   );
 }
 
-export default ForecastWeather;
+export default HourWeatherForecast;
