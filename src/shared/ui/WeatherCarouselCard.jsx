@@ -4,6 +4,7 @@ import React from "react";
 function WeatherCarouselCard({ time, icon, temp }) {
   let hour = new Date(time).getHours();
   let flooredTemp = Math.floor(temp);
+
   return (
     <Box
       sx={{

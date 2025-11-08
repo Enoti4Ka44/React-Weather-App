@@ -6,7 +6,7 @@ import ForecastWeather from "./ForecastWeather";
 function WeatherContent({ data }) {
   return (
     <Grid container sx={{ width: "100%" }}>
-      <Grid size={8}>
+      <Grid size={8} sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
         <CurrentWeather
           city={data.location.name}
           currentWeather={data.current}

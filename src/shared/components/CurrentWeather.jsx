@@ -8,6 +8,7 @@ function CurrentWeather({ city, currentWeather }) {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
+        px: 2,
       }}
     >
       <Box>
@@ -16,14 +17,14 @@ function CurrentWeather({ city, currentWeather }) {
         </Typography>
 
         <Typography sx={{ mt: 4 }} variant="h4" component="h2" fontWeight={700}>
-          {temp_c}°
+          {Math.floor(temp_c)}°
           <Typography
             sx={{ ml: 2, opacity: "0.4" }}
             variant="h4"
             component="span"
             fontWeight={700}
           >
-            {feelslike_c}°
+            {Math.floor(feelslike_c)}°
           </Typography>
           <Typography
             variant="subtitle2"
