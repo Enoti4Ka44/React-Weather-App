@@ -1,7 +1,7 @@
 import { Box, Paper, Typography } from "@mui/material";
 
-function CurrentWeather({ city, weather }) {
-  const { temp_c, condition, feelslike_c } = weather;
+function CurrentWeather({ city, currentWeather }) {
+  const { temp_c, condition, feelslike_c } = currentWeather;
   return (
     <Box
       sx={{

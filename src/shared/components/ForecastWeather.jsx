@@ -1,18 +1,14 @@
 import { Paper, Typography } from "@mui/material";
 import React from "react";
+import Carousel from "../ui/Carousel";
 
 function ForecastWeather({ hourForecastData }) {
-  console.log(hourForecastData);
   return (
-    <Paper sx={{ borderRadius: 3, p: 1.5 }}>
-      <Typography
-        variant="subtitle2"
-        component="h6"
-        fontWeight={700}
-        sx={{ opacity: "0.7" }}
-      >
+    <Paper sx={{ borderRadius: 3, p: 1.5, opacity: "0.7" }}>
+      <Typography variant="subtitle2" component="h6" fontWeight={700}>
         TODAY'S FORECAST
       </Typography>
+      <Carousel data={hourForecastData} />
     </Paper>
   );
 }

@@ -7,7 +7,10 @@ function WeatherContent({ data }) {
   return (
     <Grid container sx={{ width: "100%" }}>
       <Grid size={8}>
-        <CurrentWeather city={data.location.name} weather={data.current} />
+        <CurrentWeather
+          city={data.location.name}
+          currentWeather={data.current}
+        />
         <ForecastWeather hourForecastData={data.forecast.forecastday[0].hour} />
       </Grid>
 
