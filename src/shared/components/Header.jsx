@@ -17,7 +17,7 @@ function Header({ query, onChange, onSubmit }) {
       <Grid size={{ xs: 0, sm: 3 }}></Grid>
 
       <Grid size={{ xs: 12, sm: 6 }} display="flex" justifyContent="center">
-        <Box component="form" width="100%" onSubmit={onSubmit}>
+        <Box component="form" width="100%" maxWidth={800} onSubmit={onSubmit}>
           <Search onChange={onChange} query={query} />
         </Box>
       </Grid>

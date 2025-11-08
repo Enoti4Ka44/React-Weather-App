@@ -8,7 +8,6 @@ const SearchBar = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
   marginLeft: 0,
   width: "100%",
-  maxWidth: "600px",
 }));
 
 const SearchIconWrapper = styled("div")(({ theme }) => ({
@@ -24,7 +23,7 @@ const SearchIconWrapper = styled("div")(({ theme }) => ({
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   width: "100%",
-  maxWidth: "600px",
+
   padding: theme.spacing(0.5, 4, 0.5, 6),
 }));
 

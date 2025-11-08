@@ -1,4 +1,4 @@
-import { Box, Paper, Typography } from "@mui/material";
+import { Box, Paper, Tooltip, Typography } from "@mui/material";
 
 function CurrentWeather({ city, currentWeather }) {
   const { temp_c, condition, feelslike_c } = currentWeather;
@@ -36,15 +36,19 @@ function CurrentWeather({ city, currentWeather }) {
           </Typography>
         </Typography>
       </Box>
-      <Box sx={{ textAlign: "center" }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
         <Typography variant="h6" component="h6">
           {condition.text}
         </Typography>
-        <img
-          src={condition.icon}
-          alt="condition icon"
-          style={{ marginTop: 32 }}
-        />
+
+        <img src={condition.icon} alt="condition icon" />
       </Box>
     </Box>
   );
