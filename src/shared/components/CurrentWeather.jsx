@@ -9,6 +9,7 @@ function CurrentWeather({ city, currentWeather }) {
         justifyContent: "space-between",
         alignItems: "center",
         px: 2,
+        gap: 2,
       }}
     >
       <Box>
@@ -42,6 +43,7 @@ function CurrentWeather({ city, currentWeather }) {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
+          textAlign: "center",
         }}
       >
         <Typography variant="h6" component="h6">

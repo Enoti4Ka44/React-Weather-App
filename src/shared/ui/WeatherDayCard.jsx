@@ -42,6 +42,7 @@ function WeatherDayCard({ weatherData }) {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
+          textAlign: "center",
         }}
       >
         <img src={icon} alt="weather icon" width="50px" height="50px" />
