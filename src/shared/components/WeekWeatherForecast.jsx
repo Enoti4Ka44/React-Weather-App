@@ -13,8 +13,12 @@ function WeekWeatherForecast({ weekForecastData }) {
       >
         7-DAY FORECAST
       </Typography>
-      {weekForecastData.map((card) => (
-        <WeatherDayCard weatherData={card} key={card.date} />
+      {weekForecastData.map((card, index) => (
+        <WeatherDayCard
+          weatherData={card}
+          key={card.date}
+          lastItem={index === weekForecastData.length - 1}
+        />
       ))}
     </Paper>
   );
