@@ -1,7 +1,17 @@
-import { Box, Divider, Grid, Typography } from "@mui/material";
-import React from "react";
+import {
+  Box,
+  Dialog,
+  DialogContent,
+  Divider,
+  Grid,
+  Paper,
+  styled,
+  Typography,
+} from "@mui/material";
+import React, { useContext, useState } from "react";
 
 function WeatherDayCard({ weatherData, lastItem }) {
+  const [modalOpen, setModalOpen] = useState(false);
   const { date } = weatherData;
   const { maxtemp_c, mintemp_c } = weatherData.day;
   const { text, icon } = weatherData.day.condition;
@@ -24,10 +34,17 @@ function WeatherDayCard({ weatherData, lastItem }) {
     <>
       <Grid
         container
+        onClick={() => setModalOpen(true)}
         sx={{
           justifyContent: "space-between",
           alignItems: "center",
           my: 1,
+          cursor: "pointer",
+          borderRadius: "15px",
+          transition: "all .2s ease",
+          "&:hover": {
+            transform: "scale(1.02)",
+          },
         }}
         spacing={1}
       >
@@ -70,6 +87,12 @@ function WeatherDayCard({ weatherData, lastItem }) {
         </Grid>
       </Grid>
       {!lastItem && <Divider />}
+
+      <Dialog open={modalOpen} onClose={() => setModalOpen(false)}>
+        <DialogContent>
+          <Paper>TEST</Paper>
+        </DialogContent>
+      </Dialog>
     </>
   );
 }

@@ -4,7 +4,7 @@ import React from "react";
 function WeatherConditions({ conditions }) {
   const { wind_kph, pressure_mb, humidity, vis_km, uv, precip_mm } = conditions;
   return (
-    <Paper sx={{ borderRadius: 3, p: 2 }} elevation={4}>
+    <Paper sx={{ borderRadius: 3, p: 3 }} elevation={4}>
       <Typography
         variant="subtitle1"
         component="h5"
